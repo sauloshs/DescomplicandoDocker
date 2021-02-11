@@ -29,7 +29,7 @@ docker container ls -a
 docker container run -ti hello-world
 ```
 
-​	O comando -ti é para ter interatividade com o container, quando o container subir já estaremos conectado ao container.
+​	O parâmetro "-ti" é para ter interatividade com o container, quando o container subir já estaremos conectado ao container.
 
 #### ***Executando container***
 
@@ -50,7 +50,7 @@ crt + p + q
 docker container attach <ID Container> ou <Nome do container>
 ```
 
-#### ***Executando container como daimon***
+#### ***Executando container como daemon***
 
 ```shell
 docker container run -d nginx
