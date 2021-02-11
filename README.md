@@ -1,8 +1,14 @@
 # Descomplicando Docker
 ## ***Este repositório tem o intuito de trazer o resumo dos meus estudos referente a Docker***
 
--  [Introdução ao Docker.md](Introdução ao Docker.md) 
--  [Trabalhando com volumes.md](Trabalhando com volumes.md) 
--  [Criação de Dockerfile.md](https://github.com/sauloshs/DescomplicandoDocker/blob/main/Cria%C3%A7%C3%A3o%20de%20Dockerfile.md)
--  
+### *Introdução ao Docker*
 
+​	Trás comandos basicos de administração de container.
+
+### *Trabalhando com Volumes*
+
+​	Trás exemplos e comandos de manipulação de volumes com o Docker. Também podemos ver a abordagem de dois tipos de volumes (Bind e Volumes)
+
+### *Criação de Dockerfile*
+
+​	Trás o exemplo pratico de criação de vários Dockerfile e o build de cada imagem.
