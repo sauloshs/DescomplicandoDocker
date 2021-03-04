@@ -258,3 +258,40 @@ docker container run -ti meugo:2.0.0
 ```
 
 ​	Ao executar o comando docker image ls foi observado que a imagem meugo:2.0.0 ficou consideravelmente menor.
+
+## ***Dockerfile Healthcheck***
+
+```dockerfile
+FROM debian 
+
+RUN apt-get update && apt-get install -y apache2
+ENV APACHE_LOCK_DIR="/var/lock"
+ENV APACHE_PID_FILE="/var/run/apache2.pid"
+ENV APACHE_RUN_USER="www-data"
+ENV APACHE_RUN_GROUP="www-data"
+ENV APACHE_LOG_DIR="/var/log/apache2"
+
+ADD index.html /var/www/html/
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \ 
+ CMD curl -f http://localhost/ || exit 1 
+LABEL description="Webserver"
+LABEL version="1.0.0"
+
+VOLUME /var/www/html
+EXPOSE 80
+
+ENTRYPOINT ["/usr/sbin/apachectl"]
+CMD ["-D", "FOREGROUND"]
+```
+
+### ***Build da imagem com Healthcheck***
+
+```shell
+docker image build -t meu_apache:5.0.0 .
+```
+
+#### ***Executando imagem com Healthcheck***
+
+```shell
+docker container run -d -p 8080:80 meu_apache:5.0.0
+```

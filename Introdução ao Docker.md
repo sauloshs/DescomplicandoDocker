@@ -89,6 +89,12 @@ docker container rm  <ID container>
 docker container rm -f <ID container> #Caso o container esteja em execução
 ```
 
+#### ***Removendo todos os container***
+
+```
+docker container rm -f $(docker ps -q)
+```
+
 #### ***Verificando o status do container***
 
 ```shell
@@ -109,5 +115,27 @@ docker container update --cpus 0.4 --memory 64M <ID container>
 
 ```shell
 docker container image ls
+```
+
+### ***Dockerignore***
+
+​	Assim com o Git o Docker também tem um arquivo que podemos utilizar para ignorar determinados arquivos que estão dentro de nosso projeto .Dockerignore
+
+### ***Entrypoint***
+
+​	Principal processo dentro de uma máquina.
+
+### ***Docker Commit***
+
+​	Esse comando permite a criação de uma imagem a partir de um container em execução.
+
+```shell
+docker commit -m "Ubuntu personalizado" <ID do Container>
+```
+
+​	Alterando nome da imagem recém criada.
+
+```shell
+docker image tag <ID da Imagem> ubuntu_personalizado:1.0
 ```
 
