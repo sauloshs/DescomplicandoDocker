@@ -72,3 +72,23 @@ docker image push localhost:5000/meu_apache:1.0.0
 docker container run -d localhost:5000/meu_apache:1.0.0
 ```
 
+### ***Listando imagens no meu repositório local***
+
+​	Para isso é necessário ter o "curl" instalado na máquina.
+
+```shell
+curl localhost:5000/v2/_caralog
+#resultado exibito
+{"repositories":["meu_apache"]}
+```
+
+​	Lembrando que no exemplo acima fui usado localhost por motivos do registry esta rodando localmente mas, ele poderia esta em outra máquina.
+
+### ***Listando as versões/tag da imagem no repositório local***
+
+```shell
+curl localhost:5000/v2/meu_apache/tags/list
+#resultado exibido
+{"name":"meu_apache","tags":["1.0.0"]}
+```
+
