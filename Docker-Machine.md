@@ -1,5 +1,33 @@
 # ***Docker Machine***
 
+## ***Instalação***
+
+### ***Instalando no Linux***
+
+```sh
+curl -L https://github.com/docker/machine/releases/download/v0.16.1
+/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine
+chmod +x /tmp/docker-machine 
+sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
+```
+
+### ***Instalando no macOS***
+
+```shell
+curl -L https://github.com/docker/machine/releases/download/v0.16.1
+/docker-machine-`uname -s`-`uname -m` >/usr/local/bin/docker-machine 
+chmod +x /usr/local/bin/docker-machine
+```
+
+### ***Instalando no Windows (Necessário Git bash)***
+
+```sh
+if [[ ! -d "$HOME/bin" ]]; then mkdir -p "$HOME/bin"; fi
+curl -L https://github.com/docker/machine/releases/download/v0.16.1
+/docker-machine-Windows-x86_64.exe > "$HOME/bin/docker-machine.exe"
+chmod +x "$HOME/bin/docker-machine.exe"
+```
+
 ## ***Comandos básicos***
 
 ### ***Exibindo versão***
