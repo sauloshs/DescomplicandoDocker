@@ -171,3 +171,30 @@ showmount -r <ip do primeiro host>
 mount <Ip do primeiro host>:/opt/site /var/lib/docker/volumes/<nome do volume>/
 ```
 
+## ***Redes em cluster***
+
+### ***Criação de uma rede Overlay***
+
+```shell
+docker network create -d overlay <nome da rede>
+```
+
+### ***Listando redes***
+
+```shell
+docker network ls
+```
+
+### ***Criando um container service em uma rede especifica***
+
+```shell
+docker service create --name <nome do container> -p 8888:80 --network <nome da rede> nginx
+```
+
+### ***Adicionando uma rede especifica a um serviço Swarm em execução***
+
+```shell
+docker service update --network-add <nome da rede> <nome do container/serviço swarm>
+```
+
+​	Todos os containers que pertencem a mesma rede podem se comunicar através do nome do serviço.
