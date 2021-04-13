@@ -82,7 +82,7 @@ volumes:
 
 ## ***Mais exemplo de docker compose***
 
-```shell
+```yaml
 version: "3.8"
 services: 
   web:
